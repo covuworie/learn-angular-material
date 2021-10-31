@@ -1,0 +1,26 @@
+<!-- <div>
+  <mat-button-toggle #toggleBtn checked disableRipple disabled
+    >Toggle</mat-button-toggle
+  >
+  {{ toggleBtn.checked }}
+</div> -->
+
+<!--Like radio button group-->
+<div>
+  <mat-button-toggle-group #toggleGroup1="matButtonToggleGroup">
+    <mat-button-toggle value="angluar">Angular</mat-button-toggle>
+    <mat-button-toggle value="react">React</mat-button-toggle>
+    <mat-button-toggle value="vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{ toggleGroup1.value }}
+</div>
+
+<!--Like checkbox group-->
+<div>
+  <mat-button-toggle-group multiple #toggleGroup2="matButtonToggleGroup">
+    <mat-button-toggle value="angluar">Angular</mat-button-toggle>
+    <mat-button-toggle value="react">React</mat-button-toggle>
+    <mat-button-toggle value="vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{ toggleGroup2.value }}
+</div>
