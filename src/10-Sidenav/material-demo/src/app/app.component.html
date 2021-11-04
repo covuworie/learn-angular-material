@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+  <!-- <mat-sidenav [(opened)]="opened">Sidenav</mat-sidenav> -->
+  <!-- <mat-sidenav mode="over" [(opened)]="opened">Sidenav</mat-sidenav> -->
+  <!-- <mat-sidenav mode="push" [(opened)]="opened">Sidenav</mat-sidenav> -->
+  <mat-sidenav
+    #sideNav
+    mode="side"
+    (opened)="log('Opened')"
+    (closed)="log('Closed')"
+    [(opened)]="opened"
+    >Sidenav</mat-sidenav
+  >
+  <mat-sidenav-content
+    >Main
+    <button (click)="opened = !opened">Toggle Opened</button>
+    <button (click)="sideNav.open()">Open</button>
+    <button (click)="sideNav.close()">Close</button>
+    <!--Use for hamburger icon-->
+    <button (click)="sideNav.toggle()">Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
