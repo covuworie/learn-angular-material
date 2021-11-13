@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     { name: 'Vue' },
   ];
   control = new FormControl();
-  filteredOptions: Observable<string[]> = of(['']);
+  filteredOptions: Observable<string[]> = of([]);
 
   displayName(subject: { name: string } | undefined) {
     return subject ? subject.name : '';
