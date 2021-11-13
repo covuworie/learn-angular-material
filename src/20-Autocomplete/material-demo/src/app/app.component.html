@@ -1,0 +1,43 @@
+<!--Simple autocomplete-->
+<form>
+  <mat-form-field>
+    <input matInput [matAutocomplete]="auto" type="text" />
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">{{
+        option
+      }}</mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<!--Autocomplete binding to object-->
+<form>
+  <mat-form-field>
+    <input matInput [matAutocomplete]="autoObject" type="text" />
+    <mat-autocomplete #autoObject="matAutocomplete" [displayWith]="displayName">
+      <mat-option *ngFor="let option of objectOptions" [value]="option">{{
+        option.name
+      }}</mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<!--Autocomplete with filter-->
+<form>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      [formControl]="control"
+      [matAutocomplete]="autoFilter"
+    />
+    <mat-autocomplete #autoFilter="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
